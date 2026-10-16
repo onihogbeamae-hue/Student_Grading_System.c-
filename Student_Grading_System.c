@@ -1,1 +1,43 @@
 
+#include <stdio.h>
+
+int main() {
+    char studentName[50];
+    float quiz, project, exam, finalGrade;
+    char choice;
+
+    do {
+        printf("Enter Student Name: ");
+        scanf(" %[^\n]s", studentName);
+
+        printf("Enter Quiz Grade: ");
+        scanf("%f", &quiz);
+
+        printf("Enter Project Grade: ");
+        scanf("%f", &project);
+
+        printf("Enter Exam Grade: ");
+        scanf("%f", &exam);
+
+        finalGrade = (quiz * 0.30) + (project * 0.30) + (exam * 0.40);
+
+        printf("\n-----------------------------------\n");
+        printf("Student: %s\n", studentName);
+        printf("Final Grade: %.2f\n", finalGrade);
+
+        if (finalGrade >= 75) {
+            printf("Status: PASSED!\n");
+        } else {
+            printf("Status: FAILED.\n");
+        }
+        printf("-----------------------------------\n");
+
+        printf("Do you want to compute again? (Y/N): ");
+        scanf(" %c", &choice);
+        printf("\n");
+
+    } while (choice == 'Y' || choice == 'y');
+
+    printf("Program Ended. Thank you!\n");
+    return 0;
+}
